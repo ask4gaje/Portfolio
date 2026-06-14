@@ -1,7 +1,7 @@
 export const personal = {
   name: "Azka Firdaus",
   nickname: "Skews",
-  title: "2nd year Information System and Technology student @ ITB",
+  title: "you run of the mill University Student that's sick of his frizzy hair.",
   tagline: "",
   email: "azka.firdaus@gmail.com",
   github: "https://github.com/ask4gaje",
@@ -33,4 +33,4 @@ export const projects = [
   },
 ];
 
-export const about = `2nd year univ students`;
+export const about = "A 2nd year Information System and Technology student @ITB that's eager to learn more stuff and improve my ability";

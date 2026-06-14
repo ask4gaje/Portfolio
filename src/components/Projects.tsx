@@ -58,7 +58,7 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="font-mono text-sm text-muted transition-colors hover:text-accent"
                   >
-                    Live Demo
+                    Website
                   </a>
                 )}
               </div>
