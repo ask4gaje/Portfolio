@@ -10,7 +10,7 @@ export const personal = {
 };
 
 export const skills = {
-  Languages: ["JavaScript", "TypeScript", "Python", "C++"],
+  Languages: ["JavaScript", "TypeScript", "Python", "C", "C++"],
   Frameworks: ["React", "Next.js", "Node.js"],
   DBMS: ["PostgreSQL", "MySQL"],
   Tools: ["Git", "GitHub", "VS Code", "Figma", "Canva"],
