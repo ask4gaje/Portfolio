@@ -14,22 +14,6 @@ services:
     networks:
       - portfolio-net
 
-  webhook:
-    image: almir/webhook:latest
-    restart: unless-stopped
-    entrypoint: ["/bin/sh", "-c", "sed 's|\\$$DEPLOY_WEBHOOK_SECRET|'\"$$DEPLOY_WEBHOOK_SECRET\"'|g' /hooks.json.tmpl > /tmp/hooks.json && exec webhook -hooks /tmp/hooks.json -verbose"]
-    environment:
-      - DEPLOY_WEBHOOK_SECRET=${DEPLOY_WEBHOOK_SECRET}
-    volumes:
-      - ./hooks.json:/hooks.json.tmpl:ro
-      - ./deploy.sh:/deploy.sh:ro
-      - .:/app/repo
-      - /var/run/docker.sock:/var/run/docker.sock
-    expose:
-      - "9000"
-    networks:
-      - portfolio-net
-
   tunnel:
     image: cloudflare/cloudflared:latest
     restart: unless-stopped
