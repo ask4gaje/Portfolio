@@ -8,11 +8,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          mkdir -p ~/.local/bin
-          corepack enable --install-directory ~/.local/bin
-          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
-          corepack prepare pnpm@11.6.0 --activate
-      - run: pnpm install --frozen-lockfile
+          npm config set prefix "$HOME/.npm-global"
+          echo "$HOME/.npm-global/bin" >> "$GITHUB_PATH"
+          npm install -g pnpm@11.6.0
+          pnpm install --frozen-lockfile
       - run: pnpm lint
       - run: pnpm knip
       - run: pnpm tsc --noEmit
