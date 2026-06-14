@@ -24,7 +24,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Deploy with Docker Compose
-        env:
         run: |
           docker compose build
           docker compose up -d --remove-orphans
