@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { personal } from "@/content";
+import Background from "@/components/Background";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -26,7 +27,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
-        {children}
+        <Background />
+        <div className="relative z-10">{children}</div>
       </body>
     </html>
   );
