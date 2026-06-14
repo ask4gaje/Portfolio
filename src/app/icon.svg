@@ -1,19 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
   <defs>
     <linearGradient id="seg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#00d2ff"/>
       <stop offset="100%" stop-color="#3a7bd5"/>
     </linearGradient>
     <filter id="glow">
-      <feDropShadow dx="0" dy="9" stdDeviation="18" flood-color="#00d2ff" flood-opacity="0.35"/>
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#00d2ff" flood-opacity="0.35"/>
     </filter>
   </defs>
 
   <g filter="url(#glow)">
-    <rect x="150" y="82" width="300" height="51" rx="12" fill="url(#seg)" opacity="0.85" transform="rotate(10, 300, 108)"/>
-    <rect x="150" y="108" width="51" height="165" rx="12" fill="url(#seg)" opacity="0.7" transform="rotate(-7, 175, 190)"/>
-    <rect x="150" y="255" width="300" height="51" rx="12" fill="url(#seg)" opacity="0.85" transform="rotate(-10, 300, 280)"/>
-    <rect x="399" y="280" width="51" height="165" rx="12" fill="url(#seg)" opacity="0.7" transform="rotate(7, 424, 363)"/>
-    <rect x="150" y="428" width="300" height="51" rx="12" fill="url(#seg)" opacity="0.85" transform="rotate(10, 300, 453)"/>
+    <rect x="60" y="45" width="280" height="44" rx="10" fill="url(#seg)" opacity="0.85" transform="rotate(10, 200, 67)"/>
+    <rect x="60" y="67" width="44" height="150" rx="10" fill="url(#seg)" opacity="0.7" transform="rotate(-7, 82, 142)"/>
+    <rect x="60" y="185" width="280" height="44" rx="10" fill="url(#seg)" opacity="0.85" transform="rotate(-10, 200, 207)"/>
+    <rect x="296" y="207" width="44" height="150" rx="10" fill="url(#seg)" opacity="0.7" transform="rotate(7, 318, 282)"/>
+    <rect x="60" y="310" width="280" height="44" rx="10" fill="url(#seg)" opacity="0.85" transform="rotate(10, 200, 332)"/>
   </g>
 </svg>
