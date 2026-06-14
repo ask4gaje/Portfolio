@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-APP_DIR="$(dirname "$(readlink -f "$0")")"
+APP_DIR="/home/ska/Projects/Web/Portfolio"
 
 log() {
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1"
