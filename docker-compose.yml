@@ -3,28 +3,11 @@ services:
     build: .
     image: portfolio
     restart: unless-stopped
-    expose:
-      - "3000"
+    ports:
+      - "3000:3000"
     healthcheck:
       test: ["CMD-SHELL", "node -e \"fetch('http://localhost:3000').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))\""]
       interval: 10s
       timeout: 5s
       retries: 3
       start_period: 10s
-    networks:
-      - portfolio-net
-
-  tunnel:
-    image: cloudflare/cloudflared:latest
-    restart: unless-stopped
-    command: tunnel --no-autoupdate run
-    environment:
-      - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}
-    depends_on:
-      app:
-        condition: service_healthy
-    networks:
-      - portfolio-net
-
-networks:
-  portfolio-net:
