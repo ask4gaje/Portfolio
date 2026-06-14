@@ -6,10 +6,27 @@ services:
     expose:
       - "3000"
     healthcheck:
-      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:3000 || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 3
+      start_period: 10s
+    networks:
+      - portfolio-net
+
+  webhook:
+    image: almir/webhook:latest
+    restart: unless-stopped
+    entrypoint: ["/bin/sh", "-c", "sed 's|\\$$DEPLOY_WEBHOOK_SECRET|'\"$$DEPLOY_WEBHOOK_SECRET\"'|g' /hooks.json.tmpl > /hooks.json && exec webhook -hooks /hooks.json -verbose"]
+    environment:
+      - DEPLOY_WEBHOOK_SECRET=${DEPLOY_WEBHOOK_SECRET}
+    volumes:
+      - ./hooks.json:/hooks.json.tmpl:ro
+      - ./deploy.sh:/deploy.sh:ro
+      - .:/app/repo
+      - /var/run/docker.sock:/var/run/docker.sock
+    expose:
+      - "9000"
     networks:
       - portfolio-net
 
