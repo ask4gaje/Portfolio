@@ -22,13 +22,13 @@ export const projects = [
     name: "The Kriwils",
     description: "AI-Powered Instant Quiz Maker, .",
     tech: ["JavaScript", "Node.js", "TypeScript", "Tailwind CSS"],
-    live: "thekriwils.skews.dev",
+    live: "https://thekriwils.skews.dev",
   },
   {
     name: "NimonsCooked",
     description: "Cooking simulation game built with Java & JavaFX using OOP patterns.",
     tech: ["Java", "JavaFX"],
-    github: "https://github.com/yourusername/project-two",
+    github: "https://https://github.com/ask4gaje/NimonsCooked",
     live: null,
   },
 ];
