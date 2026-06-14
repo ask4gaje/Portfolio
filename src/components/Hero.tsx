@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="flex min-h-screen items-center justify-center px-6">
       <div className="max-w-3xl">
-        <p className="mb-4 font-mono text-accent">&gt; Hello, world, I'm</p>
+        <p className="mb-4 font-mono text-accent">&gt; Hello, world, I&apos;m</p>
 
         <h1 className="mb-4 text-4xl font-bold md:text-6xl">
           <span className="text-accent">{personal.name}</span>
