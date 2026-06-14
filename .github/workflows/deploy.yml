@@ -7,7 +7,7 @@ jobs:
     runs-on: ska-HP
     steps:
       - uses: actions/checkout@v4
-      - run: corepack enable && corepack prepare pnpm@11.6.0 --activate
+      - run: sudo corepack enable && corepack prepare pnpm@11.6.0 --activate
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
       - run: pnpm knip
