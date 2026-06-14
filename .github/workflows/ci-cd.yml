@@ -18,7 +18,7 @@ jobs:
       - run: pnpm lint
       - run: pnpm build
       - run: pnpm audit --audit-level=high
-      - run: npx knip
+      - run: pnpm knip
       - uses: hadolint/hadolint-action@v3.1.0
         with:
           dockerfile: Dockerfile

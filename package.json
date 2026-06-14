@@ -2,11 +2,13 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@11.6.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "knip": "knip"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.3.1",
@@ -22,6 +24,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.9",
+    "knip": "^6.16.1",
     "typescript": "^5"
   }
 }
