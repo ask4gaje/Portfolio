@@ -19,24 +19,16 @@ export const skills = {
 
 export const projects = [
   {
-    name: "Project One",
-    description: "Brief description of what this project does and why it matters.",
-    tech: ["React", "TypeScript", "Tailwind CSS"],
-    github: "https://github.com/yourusername/project-one",
-    live: "https://project-one.example.com",
+    name: "The Kriwils",
+    description: "AI-Powered Instant Quiz Maker, .",
+    tech: ["JavaScript", "Node.js", "TypeScript", "Tailwind CSS"],
+    live: "thekriwils.skews.dev",
   },
   {
-    name: "Project Two",
-    description: "Brief description of what this project does and why it matters.",
-    tech: ["Next.js", "Node.js", "PostgreSQL"],
+    name: "NimonsCooked",
+    description: "Cooking simulation game built with Java & JavaFX using OOP patterns.",
+    tech: ["Java", "JavaFX"],
     github: "https://github.com/yourusername/project-two",
-    live: null,
-  },
-  {
-    name: "Project Three",
-    description: "Brief description of what this project does and why it matters.",
-    tech: ["Python", "FastAPI", "Docker"],
-    github: "https://github.com/yourusername/project-three",
     live: null,
   },
 ];
