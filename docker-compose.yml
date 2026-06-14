@@ -17,7 +17,7 @@ services:
   webhook:
     image: almir/webhook:latest
     restart: unless-stopped
-    entrypoint: ["/bin/sh", "-c", "sed 's|\\$$DEPLOY_WEBHOOK_SECRET|'\"$$DEPLOY_WEBHOOK_SECRET\"'|g' /hooks.json.tmpl > /hooks.json && exec webhook -hooks /hooks.json -verbose"]
+    entrypoint: ["/bin/sh", "-c", "sed 's|\\$$DEPLOY_WEBHOOK_SECRET|'\"$$DEPLOY_WEBHOOK_SECRET\"'|g' /hooks.json.tmpl > /tmp/hooks.json && exec webhook -hooks /tmp/hooks.json -verbose"]
     environment:
       - DEPLOY_WEBHOOK_SECRET=${DEPLOY_WEBHOOK_SECRET}
     volumes:
