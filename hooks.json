@@ -1,0 +1,17 @@
+[
+  {
+    "id": "deploy",
+    "execute-command": "/deploy.sh",
+    "command-working-directory": "/app/repo",
+    "trigger-rule": {
+      "match": {
+        "type": "value",
+        "value": "$DEPLOY_WEBHOOK_SECRET",
+        "parameter": {
+          "source": "header",
+          "name": "X-Webhook-Secret"
+        }
+      }
+    }
+  }
+]
