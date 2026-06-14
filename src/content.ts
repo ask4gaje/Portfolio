@@ -28,7 +28,7 @@ export const projects = [
     name: "NimonsCooked",
     description: "Cooking simulation game built with Java & JavaFX using OOP patterns.",
     tech: ["Java", "JavaFX"],
-    github: "https://https://github.com/ask4gaje/NimonsCooked",
+    github: "https://github.com/ask4gaje/NimonsCooked",
     live: null,
   },
 ];

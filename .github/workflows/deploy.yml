@@ -1,10 +1,21 @@
-name: Deploy
+name: CI/CD
 on:
   push:
     branches: [main]
 jobs:
+  check:
+    runs-on: ska-HP
+    steps:
+      - uses: actions/checkout@v4
+      - run: corepack enable && corepack prepare pnpm@11.6.0 --activate
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm knip
+      - run: pnpm tsc --noEmit
+      - run: pnpm build
   deploy:
     runs-on: ska-HP
+    needs: check
     steps:
       - uses: actions/checkout@v4
       - name: Deploy with Docker Compose
@@ -14,7 +25,7 @@ jobs:
           docker compose build
           docker compose up -d --remove-orphans
 
-          echo "⏳ Waiting for app to become healthy (up to 60s)..."
+          echo "Waiting for app to become healthy (up to 60s)..."
           TIMEOUT=60
           ELAPSED=0
           until [ "$(docker inspect portfolio-app-1 --format='{{.State.Health.Status}}' 2>/dev/null)" = "healthy" ] || [ "$ELAPSED" -ge "$TIMEOUT" ]; do
@@ -24,10 +35,10 @@ jobs:
 
           STATUS=$(docker inspect portfolio-app-1 --format='{{.State.Health.Status}}' 2>/dev/null || echo "unknown")
           if [ "$STATUS" = "healthy" ]; then
-            echo "✅ App is healthy!"
+            echo "App is healthy!"
           else
-            echo "⚠️  App status: $STATUS — verify with: docker compose ps"
+            echo "App status: $STATUS - verify with: docker compose ps"
           fi
 
-          echo "🧹 Pruning dangling images..."
+          echo "Pruning dangling images..."
           docker image prune -f
