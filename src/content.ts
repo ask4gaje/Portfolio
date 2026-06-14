@@ -33,6 +33,4 @@ export const projects = [
   },
 ];
 
-export const about = `Write your bio here. Talk about your background, what drives you,
-what you're passionate about, and what you're currently working on or learning.
-Keep it concise but personal — this is where visitors get to know you.`;
+export const about = `2nd year univ students`;
